@@ -9,13 +9,21 @@
 </head>
 <body>
     <header>
-        Header
+        <h1><a href="#"> Logo</a></h1>
+        <nav>
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/">Profil</a></li>
+                <li><a href="/">Réalisations</a></li>
+                <li><a href="/">Contact</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        Main
+        <p>Présentation</p>
     </main>
     <footer>
-        Footer
+        nav
     </footer>
 </body>
 </html>
