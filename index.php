@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TristanBonnal-Dev</title>
-    <link rel="stylesheet" href="assets/css/style.js">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header>
@@ -20,10 +20,13 @@
         </nav>
     </header>
     <main>
-        <p>Présentation</p>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti fuga eos ipsum exercitationem labore consequatur quisquam unde perferendis provident. Quas aperiam quod ea quo quasi distinctio earum itaque nemo nulla.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti fuga eos ipsum exercitationem labore consequatur quisquam unde perferendis provident. Quas aperiam quod ea quo quasi distinctio earum itaque nemo nulla.
+        </p>
     </main>
     <footer>
-        nav
+        footer
     </footer>
 </body>
 </html>

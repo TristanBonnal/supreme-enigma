@@ -1,0 +1,11 @@
+body {
+    background: 
+        /* linear-gradient( 68.4deg,  rgba(248,182,204,0.95) 0.5%, rgba(192,198,230,0.95) 49%, rgba(225,246,240,0.95) 99.8% ), */
+        /* radial-gradient( circle farthest-corner at 10% 20%,  rgba(253,101,133,0.95) 0%, rgba(255,211,165,0.95) 90% ), */
+        linear-gradient( 109.6deg,  rgba(5,84,94,0.9) 16%, #bbb 91.1% ),
+        url(/assets/img/bg.jpg) center center/ cover no-repeat;
+    ;
+    height: 100vh;
+    
+}
+background-image: ;
