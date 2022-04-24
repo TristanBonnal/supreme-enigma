@@ -11,15 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Quicksand:wght@300;400;500;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="circle"></div>
+    <div class="circle"></div>
     <div class="container">
         <header class="ban">
             <h1><a href="#">Tristan Bonnal</a></h1>
             <nav>
                 <ul class="nav">
-                    <li><a href="/">Accueil</a></li>
-                    <li><a href="/">Profil</a></li>
-                    <li><a href="/">Réalisations</a></li>
-                    <li><a href="/">Contact</a></li>
+                    <li class="nav-item"><a href="/">Accueil</a></li>
+                    <li class="nav-item"><a href="/">Profil</a></li>
+                    <li class="nav-item"><a href="/">Réalisations</a></li>
+                    <li class="nav-item"><a href="/">Contact</a></li>
                 </ul>
             </nav>
         </header>
