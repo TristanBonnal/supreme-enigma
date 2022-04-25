@@ -5,9 +5,13 @@
 }
 
 body {
-    font-size: 18px;
+    height: 100vh;
+    background: rgb(0,0,0);
+    background: linear-gradient(130deg, rgb(27, 27, 27) 0%, rgb(33, 30, 34) 67%, rgb(17, 15, 12) 100%);font-size: 18px;
     color: #fff;
+    opacity: 0.8;
     font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
 }
 
 a,
@@ -24,10 +28,13 @@ li {
 }
 
 .header {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.95), rgba(54, 54, 54, 0.8) 39.24%,  rgba(28, 28, 28, 0.4)),
-    url(/assets/img/raspberrypi.jpg) center center/ cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(54, 54, 54, 0.7) 39.24%,  rgba(28, 28, 28, 0.2)),
+    url(/assets/img/bg.jpg) center center/ cover no-repeat;
     margin-top: 0;
-
+    height: 150px;
     padding: 1em;
 
 }
