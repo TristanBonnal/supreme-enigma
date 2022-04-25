@@ -5,14 +5,16 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: 
         linear-gradient( 109.6deg,  rgba(111, 160, 184, 0.99) 10%, rgb(135, 179, 174) 70%, rgb(63, 98, 123) 95% ),
         url(/assets/img/bg.jpg) center center/ cover no-repeat;
     ;
     height: 100vh;
-    /* font-family: 'Ubuntu', sans-serif; */
-    /* font-family: 'Montserrat', sans-serif; */
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
     color: rgba(0, 0, 0, 0.7);
 }
 
@@ -20,18 +22,27 @@ a,
 a:visited {
     color: rgba(0, 0, 0, 0.678);
     text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
 }
 
 li {
     list-style: none;
 }
 
+.logo a{
+    font-weight: 600;
+    color: rgba(62, 62, 62, 0.606);
+}
+
 .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 2em;
     background-color: rgba(255, 255, 255, 0.106);
     background: linear-gradient(225deg, rgba(255,255,255,0.4) 10%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 90%);
     width: 90%;
-    height: 600px;
+    height: 70%;
     margin: 1em auto;
     border: 2px solid rgba(255, 255, 255, 0.113);
     border-radius: 2em;
@@ -40,6 +51,7 @@ li {
 }
 
 .circle {
+    display: none;
     position: absolute;
     background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.1) 100%);
     border-radius: 50%;
@@ -49,9 +61,9 @@ li {
 .circle:first-child {
     width: 300px;
     height: 300px;
-    left: -1%;
-    top: -5%;
-    background-color: rgba(102, 61, 206, 0.315);
+    left: -5%;
+    top: 10%;
+    background-color: rgba(206, 182, 61, 0.507);
 
 }
 
@@ -59,7 +71,7 @@ li {
     width: 500px;
     height: 500px;
     right: -15%;
-    bottom: 25%;
+    bottom: 5%;
     background-color: rgba(202, 202, 73, 0.315);
 
     
@@ -83,6 +95,9 @@ li {
     letter-spacing: 1px;
 }
 
+p {
+    margin: 1em 0;
+}
 
 
 
