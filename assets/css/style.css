@@ -5,22 +5,14 @@
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: 
-        linear-gradient( 109.6deg,  rgba(111, 160, 184, 0.99) 10%, rgb(135, 179, 174) 70%, rgb(63, 98, 123) 95% ),
-        url(/assets/img/bg.jpg) center center/ cover no-repeat;
-    ;
-    height: 100vh;
     font-family: 'Ubuntu', sans-serif;
     font-size: 18px;
-    color: rgba(0, 0, 0, 0.7);
+    color: rgba(253, 253, 253, 0.7);
 }
 
 a,
 a:visited {
-    color: rgba(0, 0, 0, 0.678);
+    color: rgba(255, 255, 255, 0.678);
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
 }
@@ -31,57 +23,25 @@ li {
 
 .logo a{
     font-weight: 600;
-    color: rgba(62, 62, 62, 0.606);
+    color: rgba(255, 255, 255, 0.606);
+}
+
+header {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.92), rgba(54, 54, 54, 0.5) 39.24%,  rgba(28, 28, 28, 0.4)),
+    url(/assets/img/raspberrypi.jpg) center center/ cover no-repeat;
+    margin-top: 0;
+    height: 500px;
+    padding: 1em;
+
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 2em;
-    background-color: rgba(255, 255, 255, 0.106);
-    background: linear-gradient(225deg, rgba(255,255,255,0.4) 10%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 90%);
-    width: 90%;
-    height: 70%;
-    margin: 1em auto;
-    border: 2px solid rgba(255, 255, 255, 0.113);
-    border-radius: 2em;
-    backdrop-filter: blur(10px);
-    box-shadow: rgba(149, 135, 122, 0.404) 1px 1px 30px;
+    margin: 0 auto;
 }
-
-.circle {
-    display: none;
-    position: absolute;
-    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.1) 100%);
-    border-radius: 50%;
-    z-index: -1;
-}
-
-.circle:first-child {
-    width: 300px;
-    height: 300px;
-    left: -5%;
-    top: 10%;
-    background-color: rgba(206, 182, 61, 0.507);
-
-}
-
-.circle:nth-child(2) {
-    width: 500px;
-    height: 500px;
-    right: -15%;
-    bottom: 5%;
-    background-color: rgba(202, 202, 73, 0.315);
-
-    
-}
-
 
 .ban {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 .nav {
