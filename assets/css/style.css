@@ -4,43 +4,36 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
-    height: 100vh;
-    background: rgb(0,0,0);
-    background: linear-gradient(170deg,rgb(5, 5, 5)  10%, rgb(20, 20, 20) 67%, rgb(35, 35, 35) 100%);font-size: 18px;
-    color: #fff;
-    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(170deg,rgb(10, 10, 10)  10%, rgb(20, 20, 20) 67%, rgb(35, 35, 35) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 18px;
     line-height: 1.8em;
 }
 
-a,
-a:visited {
-    color: inherit;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-
-li {
-    list-style: none;
+.container {
+    width: 75%;
+    margin: 0 auto;
 }
 
 .header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(54, 54, 54, 0.6) 39.24%,  rgba(14, 14, 14, 0.6)),
+    background: linear-gradient(170deg, rgba(0, 0, 0, 0.8), rgba(25, 25, 25, 0.6) 39.24%,  rgba(16, 16, 16, 0.6)),
     url(/assets/img/bg.jpg) center/ cover no-repeat;
-    margin-top: 0;
     height: 300px;
-}
-
-.container {
-    width: 75%;
-    margin: 0 auto;
 }
 
 .logo {
@@ -71,16 +64,48 @@ li {
     display: inline-block;
     letter-spacing: 1px;
     border: 1px transparent solid;
-    transition: border-bottom .3s;
+}
+
+p {
+    margin: 1em 0;
+}
+
+a,
+a:visited {
+    color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+li {
+    list-style: none;
 }
 
 .active,
 .nav-item:hover {
     border-bottom: 1px solid rgba(157, 115, 255, 0.6);
+    color: rgba(255, 255, 255, 1);
+    transition: .3s;
 }
 
-p {
-    margin: 1em 0;
+
+.intro {
+    padding: 1em;
+    margin: auto 0;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    /* border-left: 1px solid rgba(157, 115, 255, 0.366); */
+}
+
+.avatar {
+    opacity: 0.8;
+}
+
+
+.footer-text {
+    text-align: center;
 }
 
 
