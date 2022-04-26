@@ -96,17 +96,19 @@ li {
     display: flex;
     justify-content:space-between;
     align-items: center;
-    /* border-left: 1px solid rgba(157, 115, 255, 0.366); */
 }
 
 .prez {
     margin-right: 2em;
     max-width: 800px;
-    text-align: justify;
+    text-align: start;
 }
 
 .avatar {
-    width: 30%;
+    flex: none;
+    width: 40%;
+    min-width: 250px;
+    max-width :400px;
     opacity: 0.8;
 }
 
@@ -128,7 +130,10 @@ li {
 
 }
 
-@media only screen and (max-width :822px) {
+@media only screen and (max-width :750px) {
+    .intro {
+        display: block;
+    }
 }
 
 
