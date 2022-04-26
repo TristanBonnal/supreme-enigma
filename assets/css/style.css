@@ -24,6 +24,7 @@ body {
 
 .container {
     width: 75%;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -31,9 +32,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(20, 20, 20, 0.6) 39.24%,  rgba(13, 13, 13, 1)),
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(20, 20, 20, 0.6) 39.24%,  rgba(12, 12, 12, 1)),
     url(/assets/img/bg.jpg) center/ cover no-repeat;
     height: 300px;
+    margin-bottom: 1em;
 }
 
 .logo {
@@ -66,9 +68,6 @@ body {
     border: 1px transparent solid;
 }
 
-p {
-    margin: 1em 0;
-}
 
 a,
 a:visited {
@@ -91,30 +90,48 @@ li {
 
 
 .intro {
-    padding: 1em;
+    padding-left: 1em;
     margin: auto 0;
     display: flex;
+    gap: 3em;
     justify-content:space-between;
-    align-items: center;
+    border-left: 1px solid rgba(157, 115, 255, 0.366);
 }
 
 .prez {
-    margin-right: 2em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    position: relative;
     max-width: 800px;
-    text-align: start;
+}
+
+.prez p {
+    max-width: 500px;
+    margin-bottom: 2em;
+}
+
+.welcome {
+    margin-bottom: 1em;
+    color: rgba(157, 115, 255, 0.36);
+    font-size: 2.5em;
+    font-weight: 400;
+    letter-spacing:2px;
 }
 
 .avatar {
     flex: none;
     width: 40%;
     min-width: 250px;
-    max-width :400px;
-    opacity: 0.8;
+    max-width :350px;
+    opacity: 0.6;
 }
 
 
 .footer-text {
     text-align: center;
+    padding: 1em;
 }
 
 
@@ -133,6 +150,12 @@ li {
 @media only screen and (max-width :750px) {
     .intro {
         display: block;
+    }
+
+    .avatar {
+        display: block;
+        margin: auto;
+        width: 90%;
     }
 }
 
