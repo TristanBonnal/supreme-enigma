@@ -168,8 +168,12 @@ li {
     align-items: center;
 }
 
+.skills__right .mini-logo {
+    flex-direction: row-reverse;
+}
+
 .mini-logo__img {
-    width: 50px;
+    width: 45px;
 }
 
 @media only screen and (max-width :870px) {
