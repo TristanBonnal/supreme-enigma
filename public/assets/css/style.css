@@ -182,7 +182,10 @@ li {
 .contact-link {
     text-transform: none;
     letter-spacing: 0;
-    margin-left: .8em;
+}
+
+.icon {
+    margin-right: .8em;
 }
 
 .map {
