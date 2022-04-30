@@ -12,6 +12,7 @@ class MainController extends AbstractController
     public function index(): Response
     {
         return $this->render('main/index.html.twig', [
+            'title' => 'Accueil'
         ]);
     }
 
@@ -19,6 +20,7 @@ class MainController extends AbstractController
     public function profile(): Response
     {
         return $this->render('main/profile.html.twig', [
+            'title' => 'Profil'
         ]);
     }
 
@@ -26,6 +28,7 @@ class MainController extends AbstractController
     public function contact(): Response
     {
         return $this->render('main/contact.html.twig', [
+            'title' => 'Contact'
         ]);
     }
 }

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tristan Bonnal - Dev</title>
+        <title>Tristan Bonnal {{title is defined ? '- ' ~ title}}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>TB</text></svg>">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet"> 
@@ -20,10 +20,10 @@
                     <h1 class="logo"><a href="{{ path('app_main') }}">Tristan <br> Bonnal</a></h1>
                     <nav>
                         <ul class="nav">
-                            <li class="nav-item"><a href="{{ path('app_main') }}">Accueil</a></li>
-                            <li class="nav-item"><a href="{{ path('app_profile') }}">Profil</a></li>
-                            <li class="nav-item"><a href="/">Réalisations</a></li>
-                            <li class="nav-item"><a href="{{ path('app_contact') }}">Contact</a></li>
+                            <li class="nav-item {{title == 'Accueil' ? 'active'}} "><a href="{{ path('app_main') }}">Accueil</a></li>
+                            <li class="nav-item {{title == 'Profil' ? 'active'}}"><a href="{{ path('app_profile') }}">Profil</a></li>
+                            <li class="nav-item {{title == 'Réalisations' ? 'active'}}"><a href="/">Réalisations</a></li>
+                            <li class="nav-item {{title == 'Contact' ? 'active'}}"><a href="{{ path('app_contact') }}">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
