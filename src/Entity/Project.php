@@ -17,9 +17,6 @@ class Project
     private $title;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $description;
-
-    #[ORM\Column(type: 'string', length: 255)]
     private $image;
 
     #[ORM\Column(type: 'string', length: 255)]
@@ -30,6 +27,9 @@ class Project
 
     #[ORM\Column(type: 'boolean')]
     private $isMain;
+
+    #[ORM\Column(type: 'text')]
+    private $description;
 
     public function getId(): ?int
     {
@@ -44,18 +44,6 @@ class Project
     public function setTitle(string $title): self
     {
         $this->title = $title;
-
-        return $this;
-    }
-
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(string $description): self
-    {
-        $this->description = $description;
 
         return $this;
     }
@@ -104,6 +92,18 @@ class Project
     public function setIsMain(bool $isMain): self
     {
         $this->isMain = $isMain;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }

@@ -101,7 +101,7 @@ li {
 
 
 /* home css */
-.intro {
+.img-block {
     padding-left: 1em;
     margin: auto 0;
     display: flex;
@@ -132,7 +132,7 @@ li {
     letter-spacing:2px;
 }
 
-.avatar {
+.main-picture {
     flex: none;
     width: 40%;
     min-width: 250px;
@@ -208,11 +208,11 @@ li {
 }
 
 @media only screen and (max-width :750px) {
-    .intro {
+    .img-block {
         display: block;
     }
 
-    .avatar {
+    .main-picture {
         display: block;
         margin: auto;
         width: 90%;

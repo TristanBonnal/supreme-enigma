@@ -3,6 +3,15 @@
 {% block body %}
 <main>
     <div class="container">
+        {% for project in projects %}
+            <section class="img-block img-block__project">
+                <div class="main-text">
+                    <h1 class="title">{{project.title}}</h1>
+                    <p> {{project.description}} </p>
+                </div>
+                <img class="main-picture" src="/assets/img/avatar.jpg" alt="">
+            </section>
+        {% endfor %}
     </div>
 </main>
 
