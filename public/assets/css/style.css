@@ -13,9 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: linear-gradient(179deg,rgb(10, 10, 10)  10%, rgb(20, 20, 20) 67%, rgb(35, 35, 35) 100%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: rgb(19, 19, 19);
     font-size: 18px;
     color: rgba(255, 255, 255, 0.7);
     font-family: 'Source Sans Pro', sans-serif;
@@ -34,7 +32,7 @@ body {
     flex: none;
     flex-direction: column;
     justify-content: center;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(20, 20, 20, 0.6) 39.24%,  rgba(12, 12, 12, 1)),
+    background: linear-gradient(180deg, rgba(15, 15, 15, 0.3) 10%, rgba(18, 18, 18, 0.6) 60%,  rgba(22, 22, 22, 0.8) 95%),
     url(/assets/img/bg.jpg) center/ cover no-repeat;
     height: 300px;
     margin-bottom: 1em;
@@ -67,7 +65,6 @@ body {
     margin-left:1.5em;;
     display: inline-block;
     letter-spacing: 1px;
-    border: 1px transparent solid;
 }
 
 
@@ -78,6 +75,8 @@ a:visited {
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 2px;
+    border: 1px transparent solid;
+
 }
 
 li {
@@ -85,7 +84,7 @@ li {
 }
 
 .active,
-.nav-item:hover {
+.nav-item a:hover {
     transform: scale(1.03);
     border-bottom: 1px solid rgba(157, 115, 255, 0.6);
     color: rgba(255, 255, 255, 1);
@@ -93,7 +92,7 @@ li {
 }
 
 .footer-text {
-    margin-top: 2em;
+    margin-top: 3em;
     text-align: center;
     padding: 1em;
     opacity: 0.8;
@@ -121,7 +120,7 @@ li {
 
 .main-text {
     max-width: 500px;
-    margin-bottom: 2.5em;
+    margin-bottom: 4em;
 }
 
 .title {
