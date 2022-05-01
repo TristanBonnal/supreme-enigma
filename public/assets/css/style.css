@@ -13,7 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: rgb(19, 19, 19);
+    background: rgb(18, 18, 18);
     font-size: 18px;
     color: rgba(255, 255, 255, 0.7);
     font-family: 'Source Sans Pro', sans-serif;
@@ -91,6 +91,11 @@ li {
     transition: .3s;
 }
 
+.main-picture,
+.map {
+    border-radius: 5px;
+}
+
 .footer-text {
     margin-top: 3em;
     text-align: center;
@@ -136,7 +141,7 @@ li {
     width: 40%;
     min-width: 250px;
     max-width :350px;
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 /* profile css */
@@ -178,7 +183,8 @@ li {
 }
 
 /* contact css */
-.contact-link {
+.contact-link,
+.project-links a {
     text-transform: none;
     letter-spacing: 0;
 }
@@ -193,6 +199,40 @@ li {
     height: 450px;
     margin: 0 auto;
 }
+
+/* projects css */
+.img-block__project {
+    margin-bottom: 4em;
+}
+
+.img-block__reverse {
+    flex-direction: row-reverse;
+    padding-left: 0;
+    padding-right:1em;
+    border-left: none;
+    border-right: 1px solid rgba(157, 115, 255, 0.366);
+}
+
+.img-block__reverse .main-text{
+    text-align: end;
+}
+
+.main-text__project {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    margin-bottom: 0;
+}
+
+.main-text__project .title {
+    margin-bottom: 0;
+}
+
+.project-links {
+    display: flex;
+    justify-content: space-between;
+}
+
 
 @media only screen and (max-width :870px) {
     .container {
