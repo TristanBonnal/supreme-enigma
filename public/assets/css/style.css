@@ -190,7 +190,7 @@ li {
 }
 
 .icon {
-    margin-right: .8em;
+    margin-right: .5em;
 }
 
 .map {
@@ -219,6 +219,7 @@ li {
 
 .main-text__project {
     display: flex;
+    gap: 1em;
     flex-direction: column;
     justify-content:space-around;
     margin-bottom: 0;
@@ -265,6 +266,25 @@ li {
         width: 100%;
     }
 
+    .main-text__project {
+        margin-bottom: 2em;
+    }
+
+    .img-block__reverse {
+        padding-left: 1em;
+        padding-right:0;
+        border-right: none;
+        border-left: 1px solid rgba(157, 115, 255, 0.366);
+    }
+
+    .img-block__reverse .main-text{
+        text-align: start;
+    }
+
+    .img-block__reverse .project-links {
+        justify-content: start;
+    }
+
 }
 
 @media only screen and (max-width :350px) {
@@ -289,6 +309,11 @@ li {
 
     .skills__right .mini-logo {
         flex-direction: row;
+    }
+
+    .img-block {
+        padding: 0;
+        border: none;
     }
 }
 
