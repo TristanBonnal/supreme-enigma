@@ -94,6 +94,7 @@ li {
 .main-picture,
 .map {
     border-radius: 5px;
+    border: 1px solid rgba(157, 115, 255, 0.2)
 }
 
 .footer-text {
@@ -233,6 +234,7 @@ li {
     display: flex;
     gap: 2em;
 }
+
 
 .img-block__reverse .project-links {
     justify-content: end;
