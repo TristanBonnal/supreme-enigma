@@ -34,7 +34,7 @@ body {
     justify-content: center;
     background: linear-gradient(180deg, rgba(15, 15, 15, 0.3) 10%, rgba(18, 18, 18, 0.6) 60%,  rgba(22, 22, 22, 0.8) 95%),
     url(/assets/img/bg.jpg) center/ cover no-repeat;
-    height: 300px;
+    height: 250px;
     margin-bottom: 1em;
 }
 
@@ -240,8 +240,7 @@ li {
     justify-content: end;
 }
 
-
-@media only screen and (max-width :870px) {
+@media only screen and (max-width :800px) {
     .container {
         width: 85%;
         margin: 0 auto;
@@ -251,9 +250,6 @@ li {
         height: 200px;
     }
 
-}
-
-@media only screen and (max-width :750px) {
     .img-block {
         display: block;
     }
@@ -289,9 +285,14 @@ li {
 
 }
 
-@media only screen and (max-width :350px) {
+@media only screen and (max-width :500px) {
     body {
         font-size: 16px;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction:column;
     }
 
     .main-text {
