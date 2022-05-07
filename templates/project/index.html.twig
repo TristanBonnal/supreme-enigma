@@ -9,7 +9,7 @@
                 <p> {{project.description}} </p>
                 <div class="project-links">
                     <a target="_blank" href="{{project.githubLink}}"><i class="icon fa-brands fa-github"></i>Voir code</a>
-                    <a target="_blank" href="#"><i class="icon fa-solid fa-globe"></i>Explorer site</a>
+                    <a target="_blank" href="{{ project.siteLink }}"><i class="icon fa-solid fa-globe"></i>Explorer site</a>
                 </div>
             </div>
             <img class="main-picture" src="{{ asset('/assets/img/') ~ project.image }}" alt="{{project.title}} screenshot">
