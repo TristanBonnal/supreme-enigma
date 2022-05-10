@@ -129,7 +129,7 @@ li {
 }
 
 .title {
-    margin-bottom: 1em;
+    margin-bottom: .5em;
     color: rgba(157, 115, 255, 0.36);
     font-size: 2.5em;
     font-weight: 400;
@@ -226,7 +226,7 @@ li {
 }
 
 .main-text__project .title {
-    margin-bottom: 0;
+    margin-bottom: .5em;
 }
 
 .project-links {
