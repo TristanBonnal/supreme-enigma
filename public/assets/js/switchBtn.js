@@ -1,39 +1,42 @@
+// Light and dark mode
 const switchBtn = {
     init: function() {
+        // Click on switch 
         const switchButton = document.getElementById('switch');
         switchButton.addEventListener('click', switchBtn.switchTheme);
+
+        // Load previously set light mode on refresh
         const theme = localStorage.getItem('theme');
         if (theme == 'light') {
-            switchBtn.addLight();
+            for (element of switchBtn.themeElements) {
+                element.classList.add('light');
+            }
         }
 
     },
+
+    //DOM elements we need to add a class to change css
+    themeElements: [
+        document.getElementById('switch'),
+        document.querySelector(':root'),
+        document.querySelector('.header')
+    ],
+
+    // Changing theme after verifying if light mode have been enable previously and then stocked in local storage
     switchTheme: function() {
         const theme = localStorage.getItem('theme');
         if (theme == 'light') {
-            switchBtn.removeLight();
+            for (element of switchBtn.themeElements) {
+                element.classList.remove('light');
+            }
             localStorage.setItem('theme','dark')
         } else {
-            switchBtn.addLight();
+            for (element of switchBtn.themeElements) {
+                element.classList.add('light');
+            }
             localStorage.setItem('theme','light')
         }
-    },
-
-    addLight: function() {
-        document.getElementById('switch').classList.add('light');
-        document.querySelector(':root').classList.add('light');
-        document.querySelector('.header').classList.add('light');
-    },
-
-    removeLight: function() {
-        document.getElementById('switch').classList.remove('light');
-        document.querySelector(':root').classList.remove('light');
-        document.querySelector('.header').classList.remove('light');
     }
 }
 
 document.addEventListener("DOMContentLoaded", switchBtn.init);
-
-
-
-
