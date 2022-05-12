@@ -20,10 +20,11 @@
                     <h1 class="logo"><a href="{{ path('app_main') }}">Tristan <br> Bonnal</a></h1>
                     <nav>
                         <ul class="nav">
-                            <li class="nav-item {{title == 'Accueil' ? 'active'}} "><a href="{{ path('app_main') }}">Accueil</a></li>
-                            <li class="nav-item {{title == 'Profil' ? 'active'}}"><a href="{{ path('app_profile') }}">Profil</a></li>
-                            <li class="nav-item {{title == 'Réalisations' ? 'active'}}"><a href="{{ path('app_projects') }}">Réalisations</a></li>
-                            <li class="nav-item {{title == 'Contact' ? 'active'}}"><a href="{{ path('app_contact') }}">Contact</a></li>
+                            <li class="nav-item"><a class="{{title == 'Accueil' ? 'active'}}" href="{{ path('app_main') }}">Accueil</a></li>
+                            <li class="nav-item"><a class="{{title == 'Profil' ? 'active'}}" href="{{ path('app_profile') }}">Profil</a></li>
+                            <li class="nav-item"><a class="{{title == 'Réalisations' ? 'active'}}" href="{{ path('app_projects') }}">Réalisations</a></li>
+                            <li class="nav-item"><a class="{{title == 'Contact' ? 'active'}}" href="{{ path('app_contact') }}">Contact</a></li>
+                            <li class="nav-item"><div id="switch"></div></li>
                         </ul>
                     </nav>
                 </div>
