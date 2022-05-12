@@ -9,7 +9,7 @@
 }
 
 :root.light {
-    --main-bg: rgb(210, 210, 210);
+    --main-bg: rgb(230, 230, 230);
     --main-color: rgba(97, 57, 187, 0.8);
     --main-color-deep: rgba(97, 57, 187, 0.9);
     --main-color-light: rgba(97, 57, 187, 0.4);
@@ -57,7 +57,7 @@ body {
 }
 
 .header.light {
-    background: linear-gradient(180deg, rgba(230, 230, 230, 0.3) 10%, rgba(235, 235, 235, 0.6) 60%,  rgba(245, 245, 245, 0.85) 95%),
+    background: linear-gradient(180deg, rgba(245, 245, 245, 0.3) 10%, rgba(250, 250, 250, 0.6) 60%,  rgba(255, 255, 255, 0.9) 95%),
     url(/assets/img/bg.jpg) center/ cover no-repeat;
 
 }
