@@ -36,6 +36,7 @@ body {
     color: var(--text-color);
     font-family: 'Source Sans Pro', sans-serif;
     line-height: 1.8em;
+    transition: color .5s;
 }
 
 .container {
@@ -101,6 +102,7 @@ a:visited {
     text-transform: uppercase;
     letter-spacing: 2px;
     border: 1px transparent solid;
+    transition: .5s;
 
 }
 
@@ -113,7 +115,7 @@ li {
     transform: scale(1.03);
     border-bottom: 1px solid var(--main-color-deep);
     color: var(--text-color-deep);
-    transition: .3s;
+    transition: .5s;
 }
 
 .main-picture,
