@@ -13,7 +13,7 @@ const switchBtn = {
         if (theme == 'light') {
             switchBtn.removeLight();
             localStorage.setItem('theme','dark')
-        } else if (theme == 'dark') {
+        } else {
             switchBtn.addLight();
             localStorage.setItem('theme','light')
         }
