@@ -1,4 +1,20 @@
 /* base css */
+:root {
+    --main-bg: rgb(18, 18, 18);
+    --main-color: rgba(157, 115, 255, 0.37);
+    --main-color-light: rgba(157, 115, 255, 0.2);
+    --main-color-deep: rgba(157, 115, 255, 0.6);
+    --text-color: rgba(255, 255, 255, 0.7);
+}
+
+:root.light {
+    --main-bg: rgb(210, 210, 210);
+    --main-color: rgba(97, 57, 187, 0.8);
+    --main-color-deep: rgba(97, 57, 187, 0.9);
+    --main-color-light: rgba(97, 57, 187, 0.4);
+    --text-color: rgba(0, 0, 0, 0.7);
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -13,11 +29,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: rgb(18, 18, 18);
+    background: var(--main-bg);
     font-size: 16px;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--text-color);
     font-family: 'Source Sans Pro', sans-serif;
     line-height: 1.8em;
+    transition: .5s;
 }
 
 .container {
@@ -35,6 +52,13 @@ body {
     url(/assets/img/bg.jpg) center/ cover no-repeat;
     height: 250px;
     margin-bottom: 1em;
+
+}
+
+.header.light {
+    background: linear-gradient(180deg, rgba(230, 230, 230, 0.3) 10%, rgba(235, 235, 235, 0.6) 60%,  rgba(245, 245, 245, 0.85) 95%),
+    url(/assets/img/bg.jpg) center/ cover no-repeat;
+
 }
 
 .logo {
@@ -52,7 +76,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(157, 115, 255, 0.366);
+    border-bottom: 1px solid var(--main-color);
 }
 
 .nav {
@@ -72,7 +96,7 @@ body {
 a,
 a:visited {
     display: inline-block;
-    color: inherit;
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -87,20 +111,25 @@ li {
 .nav-item a.active,
 .nav-item a:hover {
     transform: scale(1.03);
-    border-bottom: 1px solid rgba(157, 115, 255, 0.6);
-    color: rgba(255, 255, 255, 1);
+    border-bottom: 1px solid var(--main-color-deep);
+    color: #fff;
     transition: .3s;
 }
 
 .main-picture,
 .map {
     border-radius: 5px;
-    border: 1px solid rgba(157, 115, 255, 0.2)
+    border: 1px solid var(--main-color-light)
+}
+
+footer {
+    margin-top: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer-text {
-    margin-top: 3em;
-    text-align: center;
     padding: 1em;
     opacity: 0.8;
 }
@@ -109,11 +138,34 @@ li {
 
 #switch {
     position: relative;
-    width: 50px;
-    height: 50px;
-    background-color: rgb(195, 186, 186);
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: rgb(50, 50, 50);
+    cursor: pointer;
+    transition: .5s;
+    box-shadow: inset 0 2px 7px rgba(0, 0, 0, 0.4),
+                inset 0 2px 2px rgba(0, 0, 0, 0.2);
 }
 
+#cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #777, #333 );
+    transform: scale(0.85);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5),
+                inset 0 1px 1px rgba(255,255,255,0.3),
+                inset 0 -1px 1px rgba(255,255,255,0.3);
+    transition: .5s;
+}
+
+.light #cursor {
+    left: 20px;
+}
 
 /* home css */
 .img-block {
@@ -122,7 +174,7 @@ li {
     display: flex;
     gap: 3em;
     justify-content:space-between;
-    border-left: 1px solid rgba(157, 115, 255, 0.366);
+    border-left: 1px solid var(--main-color);
 }
 
 .prez {
@@ -141,7 +193,7 @@ li {
 
 .title {
     margin-bottom: .5em;
-    color: rgba(157, 115, 255, 0.36);
+    color: var(--main-color);
     font-size: 2.5em;
     font-weight: 400;
     letter-spacing:2px;
@@ -158,7 +210,7 @@ li {
 /* profile css */
 .main-text__left {
     padding-left: 1em;
-    border-left: 1px solid rgba(157, 115, 255, 0.366);
+    border-left: 1px solid var(--main-color);
 }
 
 .main-text__right {
@@ -166,7 +218,7 @@ li {
     margin-left: auto;
     margin-right: 0;
     padding-right: 1em;
-    border-right: 1px solid rgba(157, 115, 255, 0.366);
+    border-right: 1px solid var(--main-color);
 }
 
 .main-text__skills {
@@ -221,7 +273,7 @@ li {
     padding-left: 0;
     padding-right:1em;
     border-left: none;
-    border-right: 1px solid rgba(157, 115, 255, 0.366);
+    border-right: 1px solid var(--main-color);
 }
 
 .img-block__reverse .main-text{
@@ -282,7 +334,7 @@ li {
         padding-left: 1em;
         padding-right:0;
         border-right: none;
-        border-left: 1px solid rgba(157, 115, 255, 0.366);
+        border-left: 1px solid var(--main-color);
     }
 
     .img-block__reverse .main-text{

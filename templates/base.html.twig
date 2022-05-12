@@ -24,7 +24,7 @@
                             <li class="nav-item"><a class="{{title == 'Profil' ? 'active'}}" href="{{ path('app_profile') }}">Profil</a></li>
                             <li class="nav-item"><a class="{{title == 'Réalisations' ? 'active'}}" href="{{ path('app_projects') }}">Réalisations</a></li>
                             <li class="nav-item"><a class="{{title == 'Contact' ? 'active'}}" href="{{ path('app_contact') }}">Contact</a></li>
-                            <li class="nav-item"><div id="switch"></div></li>
+                            <li class="nav-item"></li>
                         </ul>
                     </nav>
                 </div>
@@ -37,6 +37,8 @@
 
         <footer>
             <p class="footer-text">&#169 2022 Tristan Bonnal - Réalisé avec Symfony</p>
+            <div id="switch"><div id="cursor"></div></div>
         </footer>
     </body>
+    <script src="{{ asset('assets/js/switch.js') }}"></script>
 </html>
