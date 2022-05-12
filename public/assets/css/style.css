@@ -3,16 +3,14 @@
     --main-bg: rgb(18, 18, 18);
     --main-color: rgba(157, 115, 255, 0.37);
     --main-color-light: rgba(157, 115, 255, 0.2);
-    --main-color-deep: rgba(157, 115, 255, 0.6);
     --text-color: rgba(255, 255, 255, 0.8);
     --text-color-deep: rgba(255, 255, 255, 1);
 }
 
 :root.light {
     --main-bg: rgb(230, 230, 230);
-    --main-color: rgba(97, 57, 187, 0.8);
-    --main-color-deep: rgba(97, 57, 187, 0.9);
-    --main-color-light: rgba(97, 57, 187, 0.4);
+    --main-color: rgba(55, 107, 220, 0.8);
+    --main-color-light: rgba(55, 107, 220, 0.5);
     --text-color: rgba(0, 0, 0, 0.8);
     --text-color-deep: rgba(0, 0, 0, 1);
 }
@@ -77,7 +75,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-color-light);
 }
 
 .nav {
@@ -113,7 +111,7 @@ li {
 .nav-item a.active,
 .nav-item a:hover {
     transform: scale(1.03);
-    border-bottom: 1px solid var(--main-color-deep);
+    border-bottom: 1px solid var(--main-color);
     color: var(--text-color-deep);
     transition: .5s;
 }
@@ -187,7 +185,7 @@ footer {
     display: flex;
     gap: 3em;
     justify-content:space-between;
-    border-left: 1px solid var(--main-color);
+    border-left: 1px solid var(--main-color-light);
 }
 
 .prez {
@@ -224,7 +222,7 @@ footer {
 /* profile css */
 .main-text__left {
     padding-left: 1em;
-    border-left: 1px solid var(--main-color);
+    border-left: 1px solid var(--main-color-lighy);
 }
 
 .main-text__right {
@@ -232,7 +230,7 @@ footer {
     margin-left: auto;
     margin-right: 0;
     padding-right: 1em;
-    border-right: 1px solid var(--main-color);
+    border-right: 1px solid var(--main-color-light);
 }
 
 .main-text__skills {
@@ -287,7 +285,7 @@ footer {
     padding-left: 0;
     padding-right:1em;
     border-left: none;
-    border-right: 1px solid var(--main-color);
+    border-right: 1px solid var(--main-color-light);
 }
 
 .img-block__reverse .main-text{
@@ -348,7 +346,7 @@ footer {
         padding-left: 1em;
         padding-right:0;
         border-right: none;
-        border-left: 1px solid var(--main-color);
+        border-left: 1px solid var(--main-color-light);
     }
 
     .img-block__reverse .main-text{
