@@ -210,6 +210,7 @@ footer {
     font-size: 2.5em;
     font-weight: 400;
     letter-spacing:2px;
+    transition: color .5s
 }
 
 .main-picture {
