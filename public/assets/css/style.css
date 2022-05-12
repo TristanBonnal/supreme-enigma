@@ -365,6 +365,10 @@ footer {
         flex-direction:column;
     }
 
+    footer {
+        flex-direction: column-reverse;
+    }
+
     .main-text {
         padding: 0;
         border: none;
