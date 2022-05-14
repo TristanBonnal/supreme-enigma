@@ -222,7 +222,7 @@ footer {
 /* profile css */
 .main-text__left {
     padding-left: 1em;
-    border-left: 1px solid var(--main-color-lighy);
+    border-left: 1px solid var(--main-color-light);
 }
 
 .main-text__right {
