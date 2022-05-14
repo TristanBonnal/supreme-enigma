@@ -309,6 +309,13 @@ footer {
     gap: 2em;
 }
 
+.description-link,
+.description-link:visited {
+    text-transform: none;
+    letter-spacing:normal;
+    color: var(--main-color);
+}
+
 
 .img-block__reverse .project-links {
     justify-content: end;
