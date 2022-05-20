@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+// This controller handle all static pages, the title variable allow the loading of dynamic css class in the nav links('active')
 class MainController extends AbstractController
 {
     #[Route('/', name: 'app_main')]
