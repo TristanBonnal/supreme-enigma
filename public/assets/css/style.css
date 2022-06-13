@@ -110,10 +110,10 @@ li {
 
 .nav-item a.active,
 .nav-item a:hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
     border-bottom: 1px solid var(--main-color);
     color: var(--text-color-deep);
-    transition: .5s;
+    transition: .2s;
 }
 
 .main-picture,
