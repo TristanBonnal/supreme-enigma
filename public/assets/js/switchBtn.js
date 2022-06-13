@@ -12,10 +12,9 @@ const switchBtn = {
                 element.classList.add('light');
             }
         }
-
     },
 
-    //DOM elements we need to add a class to change css
+    //DOM elements where we need to add a class to change css
     themeElements: [
         document.getElementById('switch'),
         document.querySelector(':root'),

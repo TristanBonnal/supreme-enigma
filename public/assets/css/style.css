@@ -100,8 +100,6 @@ a:visited {
     text-transform: uppercase;
     letter-spacing: 2px;
     border: 1px transparent solid;
-    transition: .5s;
-
 }
 
 li {
@@ -113,7 +111,7 @@ li {
     transform: scale(1.05);
     border-bottom: 1px solid var(--main-color);
     color: var(--text-color-deep);
-    transition: .2s;
+    transition: .3s;
 }
 
 .main-picture,
