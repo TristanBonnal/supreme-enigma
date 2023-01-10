@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:   # <=> Conteneurs
+  db:   # Nom du service
+    image: mysql:5.7    # Image de base pour le conteneur (locale ou distante)
+    container_name: mysql_c   # Nom du conteneur
+    restart: always   # Démarrage du conteneur si reboot du serveur
+    volumes:    # Points de montage <path hôte ou nom>:<path conteneur> (évite de copier les sources dans le Dockerfile)
+      - db-volume:/var/lib/mysql    # Persistence des modifications faites sur les db mysql
+      - ./articles.sql:/docker-entrypoint-initdb.d/articles.sql   # Dossier sur lequel est faite l'initialisation des db (décrit dans la doc de l'image)
+    environment:     # Surcharge des variables d'environnement
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_DATABASE: test
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+
+  app:
+    image: custom_lamp
+    container_name: myapp_c
+    restart: always
+    volumes:
+      - ./app:/var/www/html
+    ports:    # Mapping de ports <port hôte>:<port conteneur>
+      - 8080:80
+    depends_on:   # Ne démarre qu'après le service db, et s'arrêtera avant
+      - db
+
+volumes:    # Création d'un volume nommé
+  db-volume:
