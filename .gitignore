@@ -8,3 +8,6 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+.idea/*
+nohup.out
+public/phpinfo.php
