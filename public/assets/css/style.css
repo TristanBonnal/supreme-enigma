@@ -299,6 +299,21 @@ footer {
   color: var(--main-color);
 }
 
+.img-link {
+  display: block;
+  flex: none;
+  width: 40%;
+  min-width: 250px;
+  max-width: 350px;
+  opacity: 1;
+}
+
+.project-picture {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid var(--main-color-light);
+}
+
 .img-block__reverse .project-links {
   justify-content: end;
 }

@@ -12,7 +12,9 @@
                     <a target="_blank" href="{{ project.siteLink }}"><i class="icon fa-solid fa-globe"></i>Explorer site</a>
                 </div>
             </div>
-            <img class="main-picture" src="{{ asset('/assets/img/') ~ project.image }}" alt="{{project.title}} screenshot">
+            <a href="{{ project.siteLink }}" a target="_blank" class="img-link">
+                <img class="project-picture" src="{{ asset('/assets/img/') ~ project.image }}" alt="{{project.title}} screenshot">
+            </a>
         </section>
     {% endfor %}
 </div>
