@@ -2,7 +2,11 @@
 
 namespace App\Controller;
 
+use App\Form\ContactType;
+use App\Service\Mail;
+use App\Service\Mailer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -26,10 +30,28 @@ class MainController extends AbstractController
     }
 
     #[Route('/contact', name: 'app_contact')]
-    public function contact(): Response
+    public function contact(Request $request): Response
     {
+        $form = $this->createForm(ContactType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            try {
+                $datas = $form->getData();
+                $content = "De la part de : {$datas['firstname']} {$datas['lastname']} <br> Message : {$datas['content']} <br> Email: {$datas['email']}";
+                $mail = new Mailer();
+                $mail->send('bonnal.tristan91@gmail.com', 'Tristan', 'Message depuis supreme-enigma', $content);
+
+                //TODO: ajouter flash message
+                $this->addFlash('notice', 'Message envoyé');
+            } catch (\Exception $e) {
+                $this->addFlash('notice', $e->getMessage());
+            }
+        }
+
         return $this->render('main/contact.html.twig', [
-            'title' => 'Contact'
+            'title' => 'Contact',
+            'contact_form' => $form->createView()
         ]);
     }
 }
