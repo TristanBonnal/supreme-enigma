@@ -1,4 +1,4 @@
-/* base css */
+/**** base css ****/
 :root {
   --main-bg: rgb(18, 18, 18);
   --main-color: rgba(157, 115, 255, 0.37);
@@ -126,7 +126,7 @@ footer {
   opacity: 0.8;
 }
 
-/* light/dark mode switch  */
+/**** light/dark mode switch  ****/
 #switch {
   position: relative;
   width: 40px;
@@ -161,7 +161,7 @@ footer {
   transition: 0.5s;
 }
 
-/* home css */
+/**** home css ****/
 .img-block {
   padding-left: 1em;
   margin: auto 0;
@@ -202,7 +202,7 @@ footer {
   opacity: 1;
 }
 
-/* profile css */
+/*** profile css ***/
 .main-text__left {
   padding-left: 1em;
   border-left: 1px solid var(--main-color-light);
@@ -240,11 +240,25 @@ footer {
   width: 45px;
 }
 
-/* contact css */
+/**** contact css ****/
 .contact-link,
 .project-links a {
   text-transform: none;
   letter-spacing: 0;
+  font-size: 1.2em;
+}
+.contact-link:hover,
+.project-links a:hover {
+  color: var(--text-color-deep);
+}
+
+#contact_submit {
+  margin-top: 1em;
+  background-color: var(--main-color);
+  border-color: var(--main-color-light);
+}
+#contact_submit:active {
+  background-color: var(--main-color-light);
 }
 
 .icon {
@@ -258,7 +272,7 @@ footer {
   margin: 0 auto;
 }
 
-/* projects css */
+/**** projects css ****/
 .img-block__project {
   margin-bottom: 6em;
 }
