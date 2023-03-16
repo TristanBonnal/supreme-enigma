@@ -105,7 +105,11 @@ a:visited {
 }
 
 li {
-  list-style: none;
+  list-style: none !important;
+}
+
+ul {
+  padding: 0;
 }
 
 .main-picture,
@@ -126,7 +130,7 @@ footer {
   opacity: 0.8;
 }
 
-/**** light/dark mode switch  ****/
+/**** light/dark mode switch    ****/
 #switch {
   position: relative;
   width: 40px;
@@ -252,24 +256,36 @@ footer {
   color: var(--text-color-deep);
 }
 
-#contact_submit {
-  margin-top: 1em;
-  background-color: var(--main-color);
-  border-color: var(--main-color-light);
-}
-#contact_submit:active {
-  background-color: var(--main-color-light);
-}
-
-.icon {
+.contact .icon {
   margin-right: 0.5em;
 }
-
-.map {
+.contact .map {
   display: flex;
   width: 80%;
   height: 450px;
   margin: 0 auto;
+}
+.contact .form-control {
+  width: 50%;
+}
+.contact:focus {
+  background-color: var(--main-color);
+  color: var(--text-color-deep);
+}
+.contact textarea.form-control {
+  width: 100%;
+  min-height: 9em;
+}
+.contact #contact_submit {
+  margin-top: 1em;
+  background-color: var(--main-color);
+  border-color: var(--main-color-light);
+}
+.contact #contact_submit:active {
+  background-color: var(--main-color-light);
+}
+.contact .flash-message {
+  margin-top: 2em;
 }
 
 /**** projects css ****/
@@ -365,6 +381,9 @@ footer {
   }
   .img-block__reverse .project-links {
     justify-content: start;
+  }
+  .contact .form-control {
+    width: 100%;
   }
 }
 @media only screen and (max-width: 500px) {

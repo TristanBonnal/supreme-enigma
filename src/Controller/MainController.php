@@ -42,10 +42,9 @@ class MainController extends AbstractController
                 $mail = new Mailer();
                 $mail->send('bonnal.tristan91@gmail.com', 'Tristan', 'Message depuis supreme-enigma', $content);
 
-                //TODO: ajouter flash message
-                $this->addFlash('notice', 'Message envoyé');
+                $this->addFlash('success', 'Message envoyé.');
             } catch (\Exception $e) {
-                $this->addFlash('notice', $e->getMessage());
+                $this->addFlash('error', $e->getMessage());
             }
         }
 
