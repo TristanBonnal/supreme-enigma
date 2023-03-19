@@ -6,8 +6,6 @@ use Mailjet\Resources;
 
 class Mailer
 {
-
-
     private $api_key;
     private $api_key_secret;
 
