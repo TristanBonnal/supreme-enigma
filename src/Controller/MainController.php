@@ -43,6 +43,8 @@ class MainController extends AbstractController
                 $mail->send('bonnal.tristan91@gmail.com', 'Tristan', 'Message depuis supreme-enigma', $content);
 
                 $this->addFlash('success', 'Message envoyé.');
+
+                return $this->redirectToRoute('app_contact');
             } catch (\Exception $e) {
                 $this->addFlash('error', $e->getMessage());
             }
