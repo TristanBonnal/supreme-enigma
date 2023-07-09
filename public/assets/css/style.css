@@ -27,15 +27,18 @@ html, body {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   background: var(--main-bg);
   font-size: 16px;
   color: var(--text-color);
   font-family: "Source Sans Pro", sans-serif;
   line-height: 1.8em;
   transition: color 0.5s;
+}
+
+main {
+  align-self: center;
 }
 
 .container {
