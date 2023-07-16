@@ -67,6 +67,9 @@ main {
   font-size: 1.5em;
   margin-right: 1em;
 }
+.logo a:hover {
+  color: inherit;
+}
 
 .ban {
   width: 100%;
@@ -408,6 +411,9 @@ footer {
   }
 }
 @media only screen and (max-width: 500px) {
+  .nav {
+    flex-direction: column;
+  }
   footer {
     flex-direction: column-reverse;
   }

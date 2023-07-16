@@ -75,6 +75,12 @@ main {
     letter-spacing:    3px;
     font-size: 1.5em;
     margin-right: 1em;
+
+    a {
+        &:hover {
+            color: inherit;
+        }
+    }
 }
 
 .ban {
