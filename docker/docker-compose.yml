@@ -1,0 +1,46 @@
+version: "3.8"
+services:
+  # Mysql database container
+  db:
+    image: mysql
+    container_name: supreme-enigma-db
+    restart: always
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    networks:
+      - supreme_n
+
+  # Symfony apache project container
+  app:
+    build: ./
+    container_name: supreme-enigma-app
+    ports:
+      - "8080:80"
+    volumes:
+      - ./vhost:/etc/apache2/sites-enabled
+      - ../:/var/www/html
+    restart: always
+    networks:
+      - supreme_n
+
+# Phpadmin container
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: supreme-enigma-phpmyadmin
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 8081:80
+    environment:
+      PMA_HOST: db
+    networks:
+      - supreme_n
+
+volumes:
+  db-data:
+
+networks:
+  supreme_n:
