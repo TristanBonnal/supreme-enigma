@@ -15,7 +15,7 @@ class MainControllerTest extends WebTestCase
 
         $this->assertResponseIsSuccessful();
         $this->assertPageTitleSame('Tristan Bonnal - Accueil');
-        $this->assertSelectorTextContains('h1.title', 'Bienvenue !');
+        $this->assertSelectorTextContains('h1.title', 'Bienvenue');
     }
 
     public function testProfile(): void
