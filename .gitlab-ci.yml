@@ -2,6 +2,7 @@ image: php:8.1
 
 stages:
   - test
+  - build
 
 before_script:
   - apt-get update -qy
@@ -13,3 +14,23 @@ test:
   stage: test
   script:
     - ./vendor/bin/phpunit
+
+build:
+    stage: build
+    
+    image: docker:20.10.16    
+    
+    services:    # on définit les services nécessaires à l'exécution des commandes, ici le daemon docker
+      - docker:20.10.16-dind
+    
+    variables:    # ces variables sont accessibles dans les jobs, mais ne sont pas sécurisées comme celles de gitlab
+      IMAGE_NAME : tbonnal/supreme-enigma
+      IMAGE_TAG : 1.0
+      DOCKER_TLS_CERTDIR: "/certs"  # permet la communication entre le runner et le daemon docker
+          
+    before_script:
+      - docker login -u $REGISTRY_USER -p $REGISTRY_PASSWORD    # on définit les variables d'environnement dans les settings/ci-cd de gitlab pour éviter de les hardcoder
+    
+    script:
+        - docker build -t $IMAGE_NAME:$IMAGE_TAG .
+        - docker push $IMAGE_NAME:$IMAGE_TAG
