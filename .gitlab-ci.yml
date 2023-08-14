@@ -29,8 +29,7 @@ build:
       DOCKER_TLS_CERTDIR: "/certs"
           
     before_script:
-      - echo $CI_JOB_TOKEN | docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASSWORD"
-    
+      - echo "$REGISTRY_PASSWORD" | docker login --username $REGISTRY_USER --password-stdin
     script:
         - docker build -t $"IMAGE_NAME":$"IMAGE_TAG" .
         - docker push $"IMAGE_NAME":$"IMAGE_TAG"
