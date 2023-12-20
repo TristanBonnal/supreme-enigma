@@ -10,5 +10,7 @@ docker exec -it supreme-enigma-app composer install
 docker exec -it supreme-enigma-app php bin/console doctrine:database:create
 docker exec -it supreme-enigma-app php bin/console doctrine:migrations:migrate
 ```
+Ajouter la ligne suivante au fichier /etc/hosts
+> 127.0.0.1    supreme-enigma.local
 
-Accéder à l'application : http://supreme-enigma.local:8080
+Accéder à l'application : http://supreme-enigma.local:8080 
