@@ -7,8 +7,8 @@ const switchBtn = {
 
         // Load previously set light mode on refresh
         const theme = localStorage.getItem('theme');
-        if (theme == 'light') {
-            for (element of switchBtn.themeElements) {
+        if (theme === 'light') {
+            for (let element of switchBtn.themeElements) {
                 element.classList.add('light');
             }
         }
@@ -24,13 +24,13 @@ const switchBtn = {
     // Changing theme after verifying if light mode have been enable previously and then stocked in local storage
     switchTheme: function() {
         const theme = localStorage.getItem('theme');
-        if (theme == 'light') {
-            for (element of switchBtn.themeElements) {
+        if (theme === 'light') {
+            for (let element of switchBtn.themeElements) {
                 element.classList.remove('light');
             }
             localStorage.setItem('theme','dark')
         } else {
-            for (element of switchBtn.themeElements) {
+            for (let element of switchBtn.themeElements) {
                 element.classList.add('light');
             }
             localStorage.setItem('theme','light')

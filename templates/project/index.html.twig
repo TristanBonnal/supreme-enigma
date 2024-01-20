@@ -8,12 +8,12 @@
                 <h1 class="title">{{project.title}}</h1>
                 <p> {{project.description|raw}} </p>
                 <div class="project-links">
-                    <a target="_blank" href="{{project.githubLink}}"><i class="icon fa-brands fa-github"></i>Voir code</a>
+                    <a target="_blank" href="{{ project.githubLink }}"><i class="icon fa-brands fa-github"></i>Voir code</a>
                     <a target="_blank" href="{{ project.siteLink }}"><i class="icon fa-solid fa-globe"></i>Explorer site</a>
                 </div>
             </div>
             <a href="{{ project.siteLink }}" a target="_blank" class="img-link">
-                <img class="project-picture" src="{{ asset('/assets/img/') ~ project.image }}" alt="{{project.title}} screenshot">
+                <img class="project-picture" src="{{ asset('assets/img/' ~ project.image,'vite') }}" alt="{{ project.title }}">
             </a>
         </section>
     {% endfor %}
