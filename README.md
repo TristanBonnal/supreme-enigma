@@ -1,3 +1,14 @@
+## Installation locale : 
+```bash
+composer install
+npm install
+npm run build
+```
+Configurer le dsn de la db dans le .env.local puis lancer les migrations
+```bash
+php bin/console doctrine:database:create
+php bin/console doctrine:migrations:migrate
+```
 ## Lancement stack docker : 
 ```bash
 # Lancer le docker-compose
