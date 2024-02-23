@@ -6,6 +6,7 @@ services:
     container_name: supreme-enigma-db
     restart: always
     volumes:
+      - ./dump:/docker-entrypoint-initdb.d
       - db-data:/var/lib/mysql
     ports:
       - "3307:3306"
@@ -22,6 +23,17 @@ services:
       - ./vhost:/etc/apache2/sites-enabled
       - ../:/var/www/html
     restart: always
+
+  # Node container
+  node:
+    image: node:latest
+    container_name: supreme-enigma-node
+    ports:
+      - "5173:5173"
+    volumes:
+      - ../:/app
+    working_dir: /app
+    command: sh -c "npm install && npm run build && tail -f /dev/null"  # sh -c permet d'exécuter plusieurs commandes séquentiellement, tail -f /dev/null permet de garder le container actif
 
 volumes:
   db-data:
