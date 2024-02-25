@@ -18,7 +18,7 @@ launch-docker:
 	cd docker && docker compose up -d
 
 # Installation dépendances php docker
-install-docker:
+composer-docker:
 	docker exec -it supreme-enigma-app composer install
 
 # Initialisation de la base de données docker

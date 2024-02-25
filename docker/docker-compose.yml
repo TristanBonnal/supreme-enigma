@@ -24,7 +24,7 @@ services:
       - ../:/var/www/html
     restart: always
 
-  # Node container
+  # Node cqontainer
   node:
     image: node:latest
     container_name: supreme-enigma-node

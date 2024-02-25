@@ -9,15 +9,10 @@ make init-db
 
 ## Lancement stack docker : 
 ```bash
-# Après avoir paramétré le .env pour la db suivant le docker-compose, lancer l'initiation puis les migrations
-# Initialisation docker compose
+# Après avoir paramétré le dsn de la db dans le .env.local
 make launch-docker
-
-# Initialisation de la base de données docker
-docker exec supreme-enigma-app php bin/console doctrine:database:create
-docker exec supreme-enigma-app php bin/console doctrine:migrations:migrate
-
-# Import données docker
+make composer-docker
+make init-db-docker
 make import-data-docker
 ```
 Ajouter la ligne suivante au fichier /etc/hosts
