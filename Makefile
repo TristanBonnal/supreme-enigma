@@ -28,3 +28,10 @@ init-db-docker:
 # Import données docker
 import-data-docker:
 	docker exec supreme-enigma-db sh -c "mysql -u root supreme-enigma < /docker-entrypoint-initdb.d/supreme-enigma.sql"
+
+# Lancement du serveur vite dans le conteneur
+vite-dev-docker:
+	docker exec supreme-enigma-node npm run dev
+# Kill du serveur vite s'il a déjà été lancé
+kill-vite-docker:
+	docker/scripts/kill_vite.sh

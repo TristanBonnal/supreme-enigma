@@ -6,7 +6,8 @@ import symfonyPlugin from "vite-plugin-symfony";
 
 export default defineConfig({
     server: {
-        host: '0.0.0.0'
+        host: '0.0.0.0',
+        strictPort: true  // Oblige à libérer le port 5173
     },
     plugins: [
         symfonyPlugin({
