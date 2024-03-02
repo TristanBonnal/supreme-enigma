@@ -5,8 +5,9 @@ namespace App\Repository;
 use App\Entity\Project;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
-use Doctrine\ORM\ORMException;
+use Doctrine\ORM\Exception\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\Cache\Adapter\RedisAdapter;
 
 /**
  * @extends ServiceEntityRepository<Project>
@@ -45,6 +46,18 @@ class ProjectRepository extends ServiceEntityRepository
         if ($flush) {
             $this->_em->flush();
         }
+    }
+
+    public function findAllCached(): array
+    {
+        $cache = new RedisAdapter(
+            RedisAdapter::createConnection($_ENV['REDIS_URL'])
+        );
+
+        $projects = $cache->get('allProjects', function () {
+            return $this->findAll();
+        });
+        return $projects;
     }
 
     // /**

@@ -13,9 +13,12 @@ class ProjectController extends AbstractController
     #[Route('/projects', name: 'app_projects')]
     public function index(ProjectRepository $projectRepo): Response
     {
+//        $projects = $projectRepo->findAll();
+        $projects = $projectRepo->findAllCached();
+
         return $this->render('project/index.html.twig', [
             'title' => 'Réalisations',
-            'projects' => $projectRepo->findAll()
+            'projects' => $projects
         ]);
     }
 }
