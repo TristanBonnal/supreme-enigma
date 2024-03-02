@@ -19,9 +19,13 @@ use Symfony\Component\Cache\Adapter\RedisAdapter;
  */
 class ProjectRepository extends ServiceEntityRepository
 {
+    private RedisAdapter $cache;
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Project::class);
+        $this->cache = new RedisAdapter(
+            RedisAdapter::createConnection($_ENV['REDIS_URL'])
+        );
     }
 
     /**
@@ -50,14 +54,9 @@ class ProjectRepository extends ServiceEntityRepository
 
     public function findAllCached(): array
     {
-        $cache = new RedisAdapter(
-            RedisAdapter::createConnection($_ENV['REDIS_URL'])
-        );
-
-        $projects = $cache->get('allProjects', function () {
+        return $this->cache->get('allProjects', function () {
             return $this->findAll();
         });
-        return $projects;
     }
 
     // /**

@@ -35,5 +35,13 @@ services:
     working_dir: /app
     command: sh -c "npm install && npm run build && tail -f /dev/null"  # sh -c permet d'exécuter plusieurs commandes séquentiellement, tail -f /dev/null permet de garder le container actif
 
+  # Redis container
+  redis:
+      image: redis
+      container_name: supreme-enigma-redis
+      volumes:
+      - redis-data:/data
+      restart: always
 volumes:
   db-data:
+  redis-data:
