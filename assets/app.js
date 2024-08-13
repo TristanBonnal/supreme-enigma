@@ -3,6 +3,7 @@
 
 // Js
 import "./js/switchBtn.js"
+import "./js/alarm.js"
 
 // Images importées grace à un glob pattern
 import.meta.glob('./img/*');
