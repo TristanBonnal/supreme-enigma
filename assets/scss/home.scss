@@ -1,0 +1,45 @@
+/**** home css ****/
+
+.img-block {
+    padding-left: 1em;
+    margin: auto 0;
+    display: flex;
+    gap: 3em;
+    justify-content:space-between;
+    border-left: 1px solid var(--main-color-light);
+}
+
+.prez {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    position: relative;
+    max-width: 800px;
+}
+
+.main-text {
+    max-width: 500px;
+    margin-bottom: 4em;
+}
+
+.title {
+    margin-bottom: .5em;
+    color: var(--main-color);
+    font-size: 2.5em;
+    font-weight: 400;
+    letter-spacing:2px;
+    transition: color .5s
+}
+
+.main-picture {
+    flex: none;
+    width: 40%;
+    min-width: 250px;
+    max-width :350px;
+    opacity: 1;
+}
+
+
+
+

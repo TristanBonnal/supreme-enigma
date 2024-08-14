@@ -1,0 +1,153 @@
+/**** projects css ****/
+
+.img-block__project {
+    margin-bottom: 6em;
+}
+
+.img-block__reverse {
+    flex-direction: row-reverse;
+    padding-left: 0;
+    padding-right:1em;
+    border-left: none;
+    border-right: 1px solid var(--main-color-light);
+}
+
+.img-block__reverse .main-text{
+    text-align: end;
+}
+
+.main-text__project {
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    justify-content:space-around;
+    margin-bottom: 0;
+}
+
+.main-text__project .title {
+    margin-bottom: .5em;
+}
+
+.project-links {
+    display: flex;
+    gap: 2em;
+}
+
+.description-link,
+.description-link:visited {
+    text-transform: none;
+    letter-spacing:normal;
+    color: var(--main-color);
+}
+
+.img-block {
+    .img-link {
+        display: block;
+        flex: none;
+        width: 40%;
+        min-width: 250px;
+        max-width: 350px;
+        opacity: 1;
+    }
+}
+
+
+.project-picture {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid var(--main-color-light);
+}
+
+.img-block__reverse .project-links {
+    justify-content: end;
+}
+
+
+
+
+@media only screen and (max-width :800px) {
+    .container {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .header {
+        height: 200px;
+    }
+
+    .img-block {
+        display: block;
+
+        .img-link {
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+
+    .main-picture {
+        display: block;
+        margin: auto;
+        width: 90%;
+    }
+
+    .map {
+        width: 100%;
+    }
+
+    .main-text__project {
+        margin-bottom: 2em;
+    }
+
+    .img-block__reverse {
+        padding-left: 1em;
+        padding-right:0;
+        border-right: none;
+        border-left: 1px solid var(--main-color-light);
+
+        .main-text{
+            text-align: start;
+        }
+
+        .project-links {
+            justify-content: start;
+        }
+    }
+
+    .contact .form-control {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width :500px) {
+    .nav {
+        flex-direction:column;
+    }
+
+    footer {
+        flex-direction: column-reverse;
+    }
+
+    .main-text {
+        padding: 0;
+        border: none;
+        text-align: justify;
+    }
+
+    .skills {
+        display: block;
+    }
+
+    .mini-logo {
+        padding: 0 1em;
+        justify-content: space-between;
+    }
+
+    .skills__right .mini-logo {
+        flex-direction: row;
+    }
+
+    .img-block {
+        padding: 0;
+        border: none;
+    }
+}

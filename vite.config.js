@@ -20,7 +20,7 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 app: "./assets/app.js",
-                theme: "./assets/theme.scss"    // ou import dans le app.js
+                theme: "./assets/app.css"    // ou import dans le app.js
             },
 
         }

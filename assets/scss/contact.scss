@@ -1,0 +1,64 @@
+/**** contact css ****/
+
+.contact-link,
+.project-links a {
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 1.2em;
+    &:hover {
+        color: var(--text-color-deep);
+    }
+}
+
+.contact {
+
+    #contact {
+        display: grid;
+        column-gap: 1rem;
+
+        > div:nth-child(5) {
+            justify-self: center;
+            min-width: min-content;
+            width: 20%;
+
+            button {
+                width: 100%;
+            }
+        }
+
+        @media(width > 768px) {
+            grid-template-columns: 1fr 1fr;
+
+            > div:nth-child(4),
+            > div:nth-child(5){
+                grid-column: 1 / 3;
+            }
+        }
+    }
+
+
+    &:focus {
+        background-color: var(--main-color);
+        color: var(--text-color-deep);
+    }
+
+
+    textarea.form-control {
+        width: 100%;
+        min-height: 9em;
+    }
+
+    #contact_submit {
+        margin-top: 1em;
+        background-color: var(--main-color);
+        border-color: var(--main-color-light);
+
+        &:active {
+            background-color: var(--main-color-light);
+        }
+    }
+
+    .flash-message {
+        margin-top: 2em;
+    }
+}
