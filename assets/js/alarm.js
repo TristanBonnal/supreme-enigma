@@ -7,9 +7,9 @@ const alarm = {
     },
 
     handleAlarmButton() {
-        fetch('/alarm-trigger').
-        then(response => response.json()).
-        then(data => {
+        fetch('/alarm-trigger' + window.location.search)
+            .then(response => response.json())
+            .then(data => {
             console.log(data);
         });
     }
