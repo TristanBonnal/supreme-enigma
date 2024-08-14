@@ -58,12 +58,14 @@ class AlarmController extends AbstractController
         $path = $this->getParameter('kernel.project_dir') . '/assets/sounds/' . $file;
 
         $usePulse = $_ENV['APP_ENV'] === 'prod' ? '--audio-device=pulse ' : '';
+        $command = 'mpv ' . $usePulse . $path;
 
-        exec('mpv ' . $usePulse . $path, $output);
+        exec($command, $output);
 
         return new JsonResponse([
             'status' => 'ok',
             'message' => 'Alarm is ringing',
+            'command' => $command,
             'debug' => implode("\n", $output),
         ]);
     }
