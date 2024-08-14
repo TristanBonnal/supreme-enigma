@@ -2,13 +2,18 @@
 
 {% block title %}Hello AlarmController!{% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    {{ vite_entry_script_tags('alarm') }}
+{% endblock %}
+
 {% block body %}
 <div class="container">
-    <section class="alarm-container">
-        <button class="alarm__button">ALARM</button>
-        <button class="alarm__button">ALARM</button>
-        <button class="alarm__button">ALARM</button>
-        <button class="alarm__button">ALARM</button>
+    <section class="alarm">
+        {% for sound in sounds %}
+            <button class="btn alarm__button" data-file="{{ sound.path }}">{{ sound.text }}</button>
+        {% endfor %}
+
     </section>
 </div>
 
