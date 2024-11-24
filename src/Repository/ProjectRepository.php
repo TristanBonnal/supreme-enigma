@@ -19,7 +19,7 @@ use Symfony\Component\Cache\Adapter\RedisAdapter;
  */
 class ProjectRepository extends ServiceEntityRepository
 {
-    private RedisAdapter $cache;
+    private readonly RedisAdapter $cache;
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Project::class);

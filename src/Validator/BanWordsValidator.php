@@ -21,7 +21,7 @@ class BanWordsValidator extends ConstraintValidator
         }
 
         foreach ($this->words as $word) {
-            if (stripos($value, $word) !== false) {
+            if (stripos((string) $value, (string) $word) !== false) {
                 $this->context->buildViolation($constraint->message)
                     ->setParameter('{{ banWord }}', $word)
                     ->addViolation();
