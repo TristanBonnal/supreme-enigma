@@ -11,7 +11,7 @@ class MainControllerTest extends WebTestCase
 
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/');
+        $client->request('GET', '/');
 
         $this->assertResponseIsSuccessful();
         $this->assertPageTitleSame('Tristan Bonnal - Accueil');
@@ -23,7 +23,7 @@ class MainControllerTest extends WebTestCase
 
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/profile');
+        $client->request('GET', '/profile');
 
         $this->assertResponseIsSuccessful();
         $this->assertPageTitleSame('Tristan Bonnal - Profil');
@@ -35,7 +35,7 @@ class MainControllerTest extends WebTestCase
 
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/contact');
+        $client->request('GET', '/contact');
 
         $this->assertResponseIsSuccessful();
         $this->assertPageTitleSame('Tristan Bonnal - Contact');

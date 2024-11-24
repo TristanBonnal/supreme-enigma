@@ -11,8 +11,6 @@
 .idea/*
 nohup.out
 public/phpinfo.php
-/composer.lock
-/symfony.lock
 
 ###> symfony/webpack-encore-bundle ###
 /node_modules/
@@ -26,12 +24,9 @@ yarn-error.log
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
 
-###> phpunit/phpunit ###
-/phpunit.xml
-.phpunit.result.cache
-###< phpunit/phpunit ###
+###> phpstan/phpstan ###
+phpstan.neon
+###< phpstan/phpstan ###
 
-###> pentatrion/vite-bundle ###
-/node_modules/
-/public/build/
-###< pentatrion/vite-bundle ###
+tests/coverage/*
+!tests/coverage/.gitkeep
