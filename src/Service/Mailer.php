@@ -7,8 +7,8 @@ use Psr\Log\LoggerInterface;
 
 class Mailer
 {
-    private string $api_key;
-    private string $api_key_secret;
+    private readonly string $api_key;
+    private readonly string $api_key_secret;
 
     // récupére les infos de l'api mailjet dans le fichier .env
     public function __construct
@@ -20,7 +20,7 @@ class Mailer
         $this->api_key_secret = $_ENV['MAILJET_API_SECRET'];
     }
 
-    public function send($toEmail, $toName, $subject, $content)
+    public function send($toEmail, $toName, $subject, $content): void
     {
         $client = new Client($this->api_key, $this->api_key_secret,true,['version' => 'v3.1']);
         $body =

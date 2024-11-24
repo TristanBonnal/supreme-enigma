@@ -11,7 +11,7 @@ class MainControllerTest extends WebTestCase
 
         $kernelBrowser = static::createClient();
 
-        $kernelBrowser->request('GET', '/');
+        $kernelBrowser->request(\Symfony\Component\HttpFoundation\Request::METHOD_GET, '/');
 
         $this->assertResponseIsSuccessful();
         $this->assertPageTitleSame('Tristan Bonnal - Accueil');
@@ -23,7 +23,7 @@ class MainControllerTest extends WebTestCase
 
         $kernelBrowser = static::createClient();
 
-        $kernelBrowser->request('GET', '/profile');
+        $kernelBrowser->request(\Symfony\Component\HttpFoundation\Request::METHOD_GET, '/profile');
 
         $this->assertResponseIsSuccessful();
         $this->assertPageTitleSame('Tristan Bonnal - Profil');
@@ -35,7 +35,7 @@ class MainControllerTest extends WebTestCase
 
         $kernelBrowser = static::createClient();
 
-        $kernelBrowser->request('GET', '/contact');
+        $kernelBrowser->request(\Symfony\Component\HttpFoundation\Request::METHOD_GET, '/contact');
 
         $this->assertResponseIsSuccessful();
         $this->assertPageTitleSame('Tristan Bonnal - Contact');
