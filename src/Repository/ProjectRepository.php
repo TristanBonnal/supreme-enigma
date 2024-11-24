@@ -20,33 +20,25 @@ use Symfony\Component\Cache\Adapter\RedisAdapter;
 class ProjectRepository extends ServiceEntityRepository
 {
     private readonly RedisAdapter $cache;
-    public function __construct(ManagerRegistry $registry)
+    public function __construct(ManagerRegistry $managerRegistry)
     {
-        parent::__construct($registry, Project::class);
+        parent::__construct($managerRegistry, Project::class);
         $this->cache = new RedisAdapter(
             RedisAdapter::createConnection($_ENV['REDIS_URL'])
         );
     }
 
-    /**
-     * @throws ORMException
-     * @throws OptimisticLockException
-     */
-    public function add(Project $entity, bool $flush = true): void
+    public function add(Project $project, bool $flush = true): void
     {
-        $this->_em->persist($entity);
+        $this->_em->persist($project);
         if ($flush) {
             $this->_em->flush();
         }
     }
 
-    /**
-     * @throws ORMException
-     * @throws OptimisticLockException
-     */
-    public function remove(Project $entity, bool $flush = true): void
+    public function remove(Project $project, bool $flush = true): void
     {
-        $this->_em->remove($entity);
+        $this->_em->remove($project);
         if ($flush) {
             $this->_em->flush();
         }
@@ -54,37 +46,6 @@ class ProjectRepository extends ServiceEntityRepository
 
     public function findAllCached(): array
     {
-        return $this->cache->get('allProjects', function () {
-            return $this->findAll();
-        });
+        return $this->cache->get('allProjects', fn() => $this->findAll());
     }
-
-    // /**
-    //  * @return Project[] Returns an array of Project objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Project
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

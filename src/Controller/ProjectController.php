@@ -11,10 +11,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProjectController extends AbstractController
 {
     #[Route('/projects', name: 'app_projects')]
-    public function index(ProjectRepository $projectRepo): Response
+    public function index(ProjectRepository $projectRepository): Response
     {
 //        $projects = $projectRepo->findAll();
-        $projects = $projectRepo->findAllCached();
+        $projects = $projectRepository->findAllCached();
 
         return $this->render('project/index.html.twig', [
             'title' => 'Réalisations',

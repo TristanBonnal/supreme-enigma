@@ -9,9 +9,9 @@ class MainControllerTest extends WebTestCase
     public function testHome(): void
     {
 
-        $client = static::createClient();
+        $kernelBrowser = static::createClient();
 
-        $client->request('GET', '/');
+        $kernelBrowser->request('GET', '/');
 
         $this->assertResponseIsSuccessful();
         $this->assertPageTitleSame('Tristan Bonnal - Accueil');
@@ -21,9 +21,9 @@ class MainControllerTest extends WebTestCase
     public function testProfile(): void
     {
 
-        $client = static::createClient();
+        $kernelBrowser = static::createClient();
 
-        $client->request('GET', '/profile');
+        $kernelBrowser->request('GET', '/profile');
 
         $this->assertResponseIsSuccessful();
         $this->assertPageTitleSame('Tristan Bonnal - Profil');
@@ -33,9 +33,9 @@ class MainControllerTest extends WebTestCase
     public function testContact(): void
     {
 
-        $client = static::createClient();
+        $kernelBrowser = static::createClient();
 
-        $client->request('GET', '/contact');
+        $kernelBrowser->request('GET', '/contact');
 
         $this->assertResponseIsSuccessful();
         $this->assertPageTitleSame('Tristan Bonnal - Contact');

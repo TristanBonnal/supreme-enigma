@@ -3,14 +3,18 @@ namespace App\Service;
 
 use Mailjet\Client;
 use Mailjet\Resources;
+use Psr\Log\LoggerInterface;
 
 class Mailer
 {
-    private $api_key;
-    private $api_key_secret;
+    private string $api_key;
+    private string $api_key_secret;
 
     // récupére les infos de l'api mailjet dans le fichier .env
-    public function __construct()
+    public function __construct
+    (
+        private readonly LoggerInterface $logger
+    )
     {
         $this->api_key = $_ENV['MAILJET_API_KEY'];
         $this->api_key_secret = $_ENV['MAILJET_API_SECRET'];
@@ -18,7 +22,7 @@ class Mailer
 
     public function send($toEmail, $toName, $subject, $content)
     {
-        $mj = new Client($this->api_key, $this->api_key_secret,true,['version' => 'v3.1']);
+        $client = new Client($this->api_key, $this->api_key_secret,true,['version' => 'v3.1']);
         $body =
             [
                 'Messages' =>
@@ -43,10 +47,11 @@ class Mailer
                         ]
                     ]
             ];
-        $response = $mj->post(Resources::$Email, ['body' => $body]);
+        $response = $client->post(Resources::$Email, ['body' => $body]);
 
         if (!$response->success()) {
-            throw new \Exception('Erreur lors de l\'envoi du mail');
+            $this->logger->error('Erreur lors de l\'envoi du mail.', ['response' => $response->getData()]);
+            throw new \Exception('Erreur lors de l\'envoi du mail.');
         }
     }
 }

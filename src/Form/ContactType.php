@@ -14,9 +14,9 @@ use Symfony\Component\Validator\Constraints\Length;
 
 class ContactType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options): void
+    public function buildForm(FormBuilderInterface $formBuilder, array $options): void
     {
-        $builder
+        $formBuilder
             ->add('firstname', TextType::class, [
                 'label' => 'Prénom',
                 'constraints' => [new Length(min: 2, minMessage: 'Le prénom doit contenir au moins 2 caractères')],
@@ -37,9 +37,9 @@ class ContactType extends AbstractType
             ]);
     }
 
-    public function configureOptions(OptionsResolver $resolver): void
+    public function configureOptions(OptionsResolver $optionsResolver): void
     {
-        $resolver->setDefaults([
+        $optionsResolver->setDefaults([
             // Configure your form options here
         ]);
     }
