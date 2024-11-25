@@ -3,6 +3,7 @@
 namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpFoundation\Request;
 
 class MainControllerTest extends WebTestCase
 {
@@ -11,11 +12,11 @@ class MainControllerTest extends WebTestCase
 
         $kernelBrowser = static::createClient();
 
-        $kernelBrowser->request(\Symfony\Component\HttpFoundation\Request::METHOD_GET, '/');
+        $kernelBrowser->request(Request::METHOD_GET, '/');
 
-        $this->assertResponseIsSuccessful();
-        $this->assertPageTitleSame('Tristan Bonnal - Accueil');
-        $this->assertSelectorTextContains('h1.title', 'Bienvenue');
+        self::assertResponseIsSuccessful();
+        self::assertPageTitleSame('Tristan Bonnal - Accueil');
+        self::assertSelectorTextContains('h1.title', 'Bienvenue');
     }
 
     public function testProfile(): void
@@ -23,11 +24,11 @@ class MainControllerTest extends WebTestCase
 
         $kernelBrowser = static::createClient();
 
-        $kernelBrowser->request(\Symfony\Component\HttpFoundation\Request::METHOD_GET, '/profile');
+        $kernelBrowser->request(Request::METHOD_GET, '/profile');
 
-        $this->assertResponseIsSuccessful();
-        $this->assertPageTitleSame('Tristan Bonnal - Profil');
-        $this->assertSelectorTextContains('h1.title', 'Parcours');
+        self::assertResponseIsSuccessful();
+        self::assertPageTitleSame('Tristan Bonnal - Profil');
+        self::assertSelectorTextContains('h1.title', 'Parcours');
     }
 
     public function testContact(): void
@@ -35,10 +36,10 @@ class MainControllerTest extends WebTestCase
 
         $kernelBrowser = static::createClient();
 
-        $kernelBrowser->request(\Symfony\Component\HttpFoundation\Request::METHOD_GET, '/contact');
+        $kernelBrowser->request(Request::METHOD_GET, '/contact');
 
-        $this->assertResponseIsSuccessful();
-        $this->assertPageTitleSame('Tristan Bonnal - Contact');
-        $this->assertSelectorTextContains('h1.title', 'Me contacter');
+        self::assertResponseIsSuccessful();
+        self::assertPageTitleSame('Tristan Bonnal - Contact');
+        self::assertSelectorTextContains('h1.title', 'Me contacter');
     }
 }

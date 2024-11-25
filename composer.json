@@ -84,13 +84,13 @@
         }
     },
     "require-dev": {
-        "roave/security-advisories": "dev-latest"
-        ,
+        "phpunit/phpunit": "^9.5",
         "rector/rector": "^1.2",
+        "roave/security-advisories": "dev-latest",
         "symfony/browser-kit": "7.1.*",
         "symfony/css-selector": "7.1.*",
         "symfony/maker-bundle": "^1.40",
-        "symfony/phpunit-bridge": "^6.3",
+        "symfony/phpunit-bridge": "^7.1",
         "symfony/stopwatch": "7.1.*",
         "symfony/web-profiler-bundle": "7.1.*"
     }
