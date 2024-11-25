@@ -1,16 +1,62 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Développeur web fullstack basé en Gironde, près de Bordeaux. Spécialisé en PHP, Symfony et JavaScript, je suis à l'étude du marché. Découvrez mes compétences et projets.">
+    <meta property="og:title" content="Tristan Bonnal - Développeur web">
+    <meta property="og:description" content="Décrouvrez mon site portfolio dans lequel vous pourrez connaître mes compétences en développement web backend et frontend">
 
-        {% block javascripts %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    <title>Tristan Bonnal {{title is defined ? '- ' ~ title}}</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>TB</text></svg>">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <script src="https://kit.fontawesome.com/c5a85bf9e7.js" crossorigin="anonymous"></script>
+    {% block stylesheets %}
+        {{ vite_entry_link_tags('theme') }}
+    {% endblock %}
+    {% block javascripts %}
+        {{ vite_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+
+<body>
+<header class="header">
+    <div class="container">
+        <div class="ban">
+            <div class="logo"><a href="{{ path('app_main') }}">Tristan <br> Bonnal</a></div>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="{{title == 'Accueil' ? 'active'}}" href="{{ path('app_main') }}">Accueil</a></li>
+                    <li class="nav-item"><a class="{{title == 'Profil' ? 'active'}}" href="{{ path('app_profile') }}">Profil</a></li>
+                    <li class="nav-item"><a class="{{title == 'Réalisations' ? 'active'}}" href="{{ path('app_projects') }}">Réalisations</a></li>
+                    <li class="nav-item"><a class="{{title == 'Contact' ? 'active'}}" href="{{ path('app_contact') }}">Contact</a></li>
+                    <li class="nav-item"></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<main>
+    {% block body %}{% endblock %}
+</main>
+
+<footer>
+    <p class="footer-text">&#169 2022 Tristan Bonnal - Réalisé avec Symfony</p>
+    <div id="switch"><div id="cursor"></div></div>
+</footer>
+</body>
+
+<!-- Google analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MKGM01RBYE"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MKGM01RBYE');
+</script>
+
 </html>
