@@ -1,6 +1,7 @@
 <?php
 namespace App\Service;
 
+use Exception;
 use Mailjet\Client;
 use Mailjet\Resources;
 use Psr\Log\LoggerInterface;
@@ -51,7 +52,7 @@ class Mailer
 
         if (!$response->success()) {
             $this->logger->error('Erreur lors de l\'envoi du mail.', ['response' => $response->getData()]);
-            throw new \Exception('Erreur lors de l\'envoi du mail.');
+            throw new Exception('Erreur lors de l\'envoi du mail.');
         }
     }
 }

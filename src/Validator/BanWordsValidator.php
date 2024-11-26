@@ -2,6 +2,7 @@
 
 namespace App\Validator;
 
+use Override;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
@@ -12,6 +13,7 @@ class BanWordsValidator extends ConstraintValidator
         'stupid',
         'idiot',
     ];
+    #[Override]
     public function validate($value, Constraint $constraint): void
     {
         /* @var App\Validator\BanWords $constraint */

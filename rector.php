@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
+use Rector\Exception\Configuration\InvalidConfigurationException;
 use Rector\Set\ValueObject\SetList;
 use Rector\Symfony\Set\SymfonySetList;
 use Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector;
@@ -13,11 +14,11 @@ try {
             __DIR__ . '/src',
             __DIR__ . '/tests',
         ])
-        ->withPhpSets(php82: true)
-//        ->withTypeCoverageLevel(40)
+        ->withPhpSets(php83: true)
+        ->withImportNames()
         ->withDeadCodeLevel(40)
         ->withRules([
-            TypedPropertyFromStrictConstructorRector::class
+            TypedPropertyFromStrictConstructorRector::class,
         ])
         ->withSets([
             SetList::CODE_QUALITY,
@@ -29,6 +30,6 @@ try {
             SymfonySetList::SYMFONY_CONSTRUCTOR_INJECTION,
             SymfonySetList::ANNOTATIONS_TO_ATTRIBUTES
         ]);
-} catch (\Rector\Exception\Configuration\InvalidConfigurationException $e) {
+} catch (InvalidConfigurationException $e) {
 
 }

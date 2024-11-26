@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Exception;
 use App\Form\ContactType;
 use App\Service\Mailer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -48,7 +49,7 @@ class MainController extends AbstractController
                 $this->addFlash('success', 'Message envoyé.');
 
                 return $this->redirectToRoute('app_contact');
-            } catch (\Exception $e) {
+            } catch (Exception $e) {
                 $this->addFlash('error', $e->getMessage());
             }
         }

@@ -3,6 +3,7 @@
 
 namespace App\Form;
 
+use Override;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -14,6 +15,7 @@ use Symfony\Component\Validator\Constraints\Length;
 
 class ContactType extends AbstractType
 {
+    #[Override]
     public function buildForm(FormBuilderInterface $formBuilder, array $options): void
     {
         $formBuilder
@@ -37,6 +39,7 @@ class ContactType extends AbstractType
             ]);
     }
 
+    #[Override]
     public function configureOptions(OptionsResolver $optionsResolver): void
     {
         $optionsResolver->setDefaults([
