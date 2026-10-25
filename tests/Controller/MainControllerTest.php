@@ -4,6 +4,7 @@ namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class MainControllerTest extends WebTestCase
 {
@@ -41,5 +42,40 @@ class MainControllerTest extends WebTestCase
         self::assertResponseIsSuccessful();
         self::assertPageTitleSame('Tristan Bonnal - Contact');
         self::assertSelectorTextContains('h1.title', 'Me contacter');
+    }
+
+    public function testContactFormIsDisabled(): void
+    {
+
+        $kernelBrowser = static::createClient();
+
+        $crawler = $kernelBrowser->request(Request::METHOD_GET, '/contact');
+
+        self::assertResponseIsSuccessful();
+        self::assertSelectorTextContains('.contact-form', 'Le formulaire de contact est désactivé');
+        self::assertSelectorExists('form[name="contact"] textarea[disabled]');
+        self::assertSelectorExists('form[name="contact"] button[disabled]');
+        self::assertCount(0, $crawler->filter(
+            'form[name="contact"] input:not([type="hidden"]):not([disabled]), '
+            . 'form[name="contact"] textarea:not([disabled]), '
+            . 'form[name="contact"] button:not([disabled])'
+        ));
+    }
+
+    public function testContactFormSubmissionIsRejected(): void
+    {
+
+        $kernelBrowser = static::createClient();
+
+        $kernelBrowser->request(Request::METHOD_POST, '/contact', [
+            'contact' => [
+                'firstname' => 'John',
+                'lastname' => 'Doe',
+                'email' => 'john@doe.fr',
+                'content' => 'Hello',
+            ],
+        ]);
+
+        self::assertResponseStatusCodeSame(Response::HTTP_METHOD_NOT_ALLOWED);
     }
 }

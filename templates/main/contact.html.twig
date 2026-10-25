@@ -34,21 +34,12 @@
             <div class="contact-form">
                 <h2 class="title">Envoyer un message</h2>
                 <div class="flash-message">
-                    {% for message in app.flashes('success') %}
-                        <div class="alert alert-success">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-
-                    {% for message in app.flashes('error') %}
-                        <div class="alert alert-danger">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
+                    <div class="alert alert-warning">
+                        Le formulaire de contact est désactivé, contactez-moi par email ou sur Linkedin.
+                    </div>
                 </div>
 
                 {{ form(contact_form) }}
-                {{ form_errors(contact_form) }}
         </section>
     </div>
 {% endblock %}
