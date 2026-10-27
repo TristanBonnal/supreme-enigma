@@ -19,12 +19,15 @@ use Symfony\Component\Cache\Adapter\RedisAdapter;
  */
 class ProjectRepository extends ServiceEntityRepository
 {
+    private const CACHE_LIFETIME_IN_SECONDS = 86400;
+
     private readonly RedisAdapter $cache;
     public function __construct(ManagerRegistry $managerRegistry)
     {
         parent::__construct($managerRegistry, Project::class);
         $this->cache = new RedisAdapter(
-            RedisAdapter::createConnection($_ENV['REDIS_URL'])
+            RedisAdapter::createConnection($_ENV['REDIS_URL']),
+            defaultLifetime: self::CACHE_LIFETIME_IN_SECONDS
         );
     }
 

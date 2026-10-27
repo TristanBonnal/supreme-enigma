@@ -3,7 +3,7 @@
 {% block body %}
 <div class="container">
     {% for project in projects %}
-        <section class="img-block img-block__project {{not loop.index % 2 ? 'img-block__reverse'}}">
+        <section class="img-block img-block__project {{not (loop.index % 2) ? 'img-block__reverse'}}">
             <div class="main-text main-text__project">
                 <h1 class="title">{{project.title}}</h1>
                 <p> {{project.description|raw}} </p>
