@@ -6,7 +6,14 @@
     --main-color-light: rgba(168, 134, 247, 0.49);
     --text-color: rgba(255, 255, 255, 0.75);
     --text-color-deep: rgba(255, 255, 255, 1);
-    --header-gradient: linear-gradient(180deg, rgba(15, 15, 15, 0.3) 10%, rgba(18, 18, 18, 0.6) 60%, rgba(22, 22, 22, 0.8) 95%);
+    --header-base: linear-gradient(115deg, #0b0e16 0%, #121a2b 45%, #161328 70%, #0c0d14 100%);
+    --header-glow-1: rgba(157, 115, 255, 0.32);
+    --header-glow-2: rgba(56, 182, 236, 0.24);
+    --header-shard-1: rgba(140, 110, 255, 0.09);
+    --header-shard-2: rgba(70, 160, 240, 0.08);
+    --header-line-1: rgba(110, 205, 255, 0.55);
+    --header-line-2: rgba(200, 150, 255, 0.4);
+    --header-grid: rgba(255, 255, 255, 0.045);
 }
 
 :root.light {
@@ -15,7 +22,14 @@
     --main-color-light: rgba(101, 149, 254, 0.57);
     --text-color: rgba(0, 0, 0, 0.75);
     --text-color-deep: rgba(0, 0, 0, 1);
-    --header-gradient: linear-gradient(180deg, rgba(245, 245, 245, 0.3) 10%, rgba(250, 250, 250, 0.6) 60%, rgba(255, 255, 255, 0.9) 95%);
+    --header-base: linear-gradient(115deg, #f3f5fb 0%, #e3e9f6 45%, #e9e5f6 70%, #f1f2f7 100%);
+    --header-glow-1: rgba(157, 115, 255, 0.22);
+    --header-glow-2: rgba(55, 107, 220, 0.2);
+    --header-shard-1: rgba(120, 100, 230, 0.07);
+    --header-shard-2: rgba(55, 107, 220, 0.07);
+    --header-line-1: rgba(55, 107, 220, 0.45);
+    --header-line-2: rgba(140, 100, 240, 0.35);
+    --header-grid: rgba(20, 30, 60, 0.05);
 }
 
 @view-transition {
@@ -58,10 +72,42 @@ main {
     flex: none;
     flex-direction: column;
     justify-content: center;
-    background: var(--header-gradient), url(/assets/img/bg.webp) center / cover no-repeat;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        linear-gradient(112deg, transparent 84.6%, var(--header-line-1) 84.75%, transparent 84.95%),
+        linear-gradient(112deg, transparent 88.4%, var(--header-line-2) 88.5%, transparent 88.65%),
+        linear-gradient(68deg, transparent 11.8%, var(--header-line-2) 11.9%, transparent 12.05%),
+        linear-gradient(112deg, transparent 58%, var(--header-shard-1) 58% 84.7%, transparent 84.7%),
+        linear-gradient(68deg, transparent 0%, var(--header-shard-2) 0% 11.9%, transparent 11.9%),
+        linear-gradient(112deg, transparent 88.5%, var(--header-shard-2) 88.5% 100%, transparent 100%),
+        radial-gradient(ellipse 45% 110% at 12% -10%, var(--header-glow-1), transparent 70%),
+        radial-gradient(ellipse 40% 100% at 88% 110%, var(--header-glow-2), transparent 70%),
+        var(--header-base);
     view-transition-name: header;
     height: 250px;
     margin-bottom: 1em;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+            linear-gradient(var(--header-grid) 1px, transparent 1px) 0 0 / 32px 32px,
+            linear-gradient(90deg, var(--header-grid) 1px, transparent 1px) 0 0 / 32px 32px;
+        mask-image: radial-gradient(ellipse 60% 90% at 70% 40%, #000, transparent 75%);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: auto 0 0;
+        height: 35%;
+        z-index: -1;
+        background: linear-gradient(transparent, var(--main-bg));
+    }
 }
 
 
