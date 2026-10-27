@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bg" x1="18" y1="10" x2="238" y2="250" gradientUnits="userSpaceOnUse"><stop stop-color="#101722"/><stop offset=".52" stop-color="#1C2C40"/><stop offset="1" stop-color="#080C12"/></linearGradient>
+    <linearGradient id="letters" x1="70" y1="70" x2="185" y2="190" gradientUnits="userSpaceOnUse"><stop stop-color="#E1F3FF"/><stop offset=".48" stop-color="#A8CBE9"/><stop offset="1" stop-color="#668BB5"/></linearGradient>
+    <linearGradient id="slash" x1="185" y1="12" x2="85" y2="240" gradientUnits="userSpaceOnUse"><stop stop-color="#77BDEB"/><stop offset="1" stop-color="#315B88" stop-opacity=".12"/></linearGradient>
+  </defs>
+  <rect x="2" y="2" width="252" height="252" rx="42" fill="url(#bg)" stroke="#33465C" stroke-width="2"/>
+  <path d="M183 3 L87 253" stroke="url(#slash)" stroke-width="8"/>
+  <path d="M49 75 H128 V87 H49 Z" fill="url(#letters)"/>
+  <path d="M75 88 H91 V169 H75 Z" fill="url(#letters)"/>
+  <path d="M111 103 H150 C174 103 189 116 189 136 C189 149 182 158 171 163 C186 168 196 180 196 196 C196 219 179 234 153 234 H111 Z M128 119 V157 H148 C163 157 172 150 172 138 C172 126 163 119 148 119 Z M128 173 V218 H151 C169 218 179 210 179 196 C179 182 169 173 151 173 Z" fill="url(#letters)"/>
+</svg>

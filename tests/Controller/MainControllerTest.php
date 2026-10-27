@@ -88,10 +88,10 @@ class MainControllerTest extends WebTestCase
 
         foreach ($crawler->filter('link[rel="icon"], link[rel="apple-touch-icon"]') as $link) {
             $href = $link->getAttribute('href');
-            self::assertStringStartsWith('/favicon.', $href);
             self::assertFileExists(dirname(__DIR__, 2).'/public'.$href);
         }
         self::assertSelectorExists('link[rel="icon"][href="/favicon.ico"]');
-        self::assertSelectorExists('link[rel="icon"][href="/favicon.png"]');
+        self::assertSelectorExists('link[rel="icon"][href="/favicon.svg"]');
+        self::assertSelectorExists('link[rel="apple-touch-icon"][href="/apple-touch-icon.png"]');
     }
 }
