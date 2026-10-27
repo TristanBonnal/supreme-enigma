@@ -6,7 +6,7 @@ import "./js/switchBtn.js"
 
 
 // Images importées grace à un glob pattern
-import.meta.glob('./img/*');
+import.meta.glob('./img/*', { eager: true });
 
 
 console.log("Happy coding !!");

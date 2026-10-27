@@ -12,7 +12,7 @@
         "doctrine/orm": "^2.12",
         "mailjet/mailjet-apiv3-php": "^1.5",
         "nyholm/psr7": "*",
-        "pentatrion/vite-bundle": "^6.3",
+        "pentatrion/vite-bundle": "^8.2",
         "symfony/apache-pack": "^1.0",
         "symfony/asset": "7.4.*",
         "symfony/console": "7.4.*",

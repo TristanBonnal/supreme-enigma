@@ -1053,7 +1053,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     throw_on_missing_asset?: scalar|Param|null, // Throw exception when asset is not present in the manifest file // Default: true
  *     cache?: bool|Param, // Enable caching of the entry point file(s) // Default: false
  *     preload?: "none"|"link-tag"|"link-header"|Param, // preload all rendered script and link tags automatically via the http2 Link header. (symfony/web-link is required) Instead <link rel="modulepreload"> will be used. // Default: "link-tag"
- *     crossorigin?: false|"anonymous"|"use-credentials"|Param, // crossorigin value, can be false (default), anonymous or use-credentials // Default: false
+ *     crossorigin?: false|true|"anonymous"|"use-credentials"|Param, // crossorigin value, can be false, true (default), anonymous (same as true) or use-credentials // Default: true
  *     script_attributes?: list<scalar|Param|null>,
  *     link_attributes?: list<scalar|Param|null>,
  *     preload_attributes?: list<scalar|Param|null>,
