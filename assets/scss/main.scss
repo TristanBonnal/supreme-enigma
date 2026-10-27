@@ -65,6 +65,13 @@ main {
     width: 75%;
     max-width: 1000px;
     margin: 0 auto;
+    padding: 0;
+}
+
+// Keep Bootstrap (contact page only) from overriding the site container
+body .container {
+    max-width: 1000px;
+    padding: 0;
 }
 
 .header {
