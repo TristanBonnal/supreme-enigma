@@ -78,4 +78,20 @@ class MainControllerTest extends WebTestCase
 
         self::assertResponseStatusCodeSame(Response::HTTP_METHOD_NOT_ALLOWED);
     }
+
+    public function testFaviconIsLinkedAndServed(): void
+    {
+
+        $kernelBrowser = static::createClient();
+
+        $crawler = $kernelBrowser->request(Request::METHOD_GET, '/');
+
+        foreach ($crawler->filter('link[rel="icon"], link[rel="apple-touch-icon"]') as $link) {
+            $href = $link->getAttribute('href');
+            self::assertStringStartsWith('/favicon.', $href);
+            self::assertFileExists(dirname(__DIR__, 2).'/public'.$href);
+        }
+        self::assertSelectorExists('link[rel="icon"][href="/favicon.ico"]');
+        self::assertSelectorExists('link[rel="icon"][href="/favicon.png"]');
+    }
 }
