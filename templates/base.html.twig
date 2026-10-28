@@ -6,8 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Développeur web fullstack basé en Gironde, près de Bordeaux. Spécialisé en PHP, Symfony et JavaScript, je suis à l'étude du marché. Découvrez mes compétences et projets.">
     <meta property="og:title" content="Tristan Bonnal - Développeur web">
-    <meta property="og:description" content="Décrouvrez mon site portfolio dans lequel vous pourrez connaître mes compétences en développement web backend et frontend">
-    <meta property="og:image" content="{{ absolute_url(asset('assets/img/avatar.webp', 'vite')) }}">
+    <meta property="og:description" content="Découvrez mon site portfolio dans lequel vous pourrez connaître mes compétences en développement web backend et frontend">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ app.request.uri }}">
+    <meta property="og:image" content="{{ absolute_url('/og-image.jpg') }}">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="700">
+    <meta property="og:image:height" content="875">
+    <meta property="og:image:alt" content="Photo de Tristan Bonnal">
+    <meta name="twitter:card" content="summary_large_image">
 
     <title>Tristan Bonnal {{title is defined ? '- ' ~ title}}</title>
     <link rel="icon" href="/favicon.ico" sizes="48x48">
